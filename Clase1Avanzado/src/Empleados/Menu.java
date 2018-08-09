@@ -11,7 +11,7 @@ public class Menu {
 		Manager jefeSenado = createManager("Jefe Senado", "senado", 200);
 		Manager jefeDiputado = createManager("Jefe Diputado", "congreso", 300);
 		cant = generar();
-		Employee Empleados = crearEmpleados(cant); 
+		//Employee Empleados = crearEmpleados(cant); 
 
 
 	}
@@ -23,11 +23,11 @@ public class Menu {
 		
 		return man;
 	}
-	private static Employee crearEmpleados(int numEmpleados) {
+//	private static Employee crearEmpleados(int numEmpleados) {
 		
-	}	
+	//}	
 	private static int generar() {
-	}
+	
 		// TODO Auto-generated method stub
 		int cantidad;
 		Random empleados;
