@@ -19,10 +19,29 @@ public class Menu {
 		GestorEmpleados.establecerJerarquia(jefeDiputado, presidente);
 		GestorEmpleados.generarEmpleados(jefeDiputado);
 		
+		for (int i= 0; i <jefeSenado.getReportees().size(); i++) {
+			GestorEmpleados.generarAsesores(jefeSenado.getReportees().get(i));
+		}
+		
+		for (int i= 0; i <jefeDiputado.getReportees().size(); i++) {
+			GestorEmpleados.generarAsesores(jefeDiputado.getReportees().get(i));
+		}
+		
 		for (Votante empleado : presidente.getReportees()) {
 			empleado.elegirVoto();
 			System.out.println(empleado.getDecisionVoto());
 		}
+		
+		for (Votante empleado : jefeSenado.getReportees()) {
+			empleado.elegirVoto();
+			System.out.println(empleado.getDecisionVoto());
+		}
+		for (Votante empleado : jefeDiputado.getReportees()) {
+			empleado.elegirVoto();
+			System.out.println(empleado.getDecisionVoto());
+		}
+
+
 
 	}
 

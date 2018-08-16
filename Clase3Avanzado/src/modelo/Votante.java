@@ -6,5 +6,6 @@ public interface Votante {
 	public static final String SENADO = "senado";
 	public static final String DIPUTADO = "congreso";
 	public Boolean getDecisionVoto();
+	public void quienVoto(String votador);
 	
 }

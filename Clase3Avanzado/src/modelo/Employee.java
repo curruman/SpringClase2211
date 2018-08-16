@@ -74,7 +74,17 @@ public class Employee implements Votante {
 	@Override
 	public Boolean getDecisionVoto() {
 		// TODO Auto-generated method stub
+		String nombre;
+		nombre = name;
+		quienVoto(nombre);
 		return voto;
+	}
+
+	@Override
+	public void quienVoto(String votador) {
+		System.out.print(votador + " ");
+		// TODO Auto-generated method stub
+		
 	}
 
 	
