@@ -5,6 +5,7 @@ import java.util.List;
 
 import modelo.Employee;
 import persistencia.ArchivoDAO;
+import persistencia.ArchivocDAO;
 import persistencia.EmployeeDAO;
 import persistencia.InMemoryDAO;
 
@@ -12,7 +13,8 @@ import persistencia.InMemoryDAO;
 public class GestorEmpleados {
 
 	private static EmployeeDAO dao = new InMemoryDAO();
-	private static EmployeeDAO daoArchivo = new ArchivoDAO();
+	//private static EmployeeDAO daoArchivo = new ArchivoDAO();
+	private static EmployeeDAO daoArchivo = new ArchivocDAO();
 	
 	public static List<Employee> generateRandomEmployees(int cantidad, String nombreBase, int legajoBase, Employee report){
 		List<Employee> employees = new ArrayList<Employee>();
@@ -42,6 +44,7 @@ public class GestorEmpleados {
 		empl.setName(nombre);
 		empl.setUbicacion(ubicacion);
 		dao.guardar(empl);
+		//daoArchivo.guardar(empl);
 		return empl;
 	}
 	
