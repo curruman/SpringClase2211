@@ -16,7 +16,7 @@ public class ArchivocDAO implements EmployeeDAO{
 			
 			filewriter = new FileWriter ("empleados.txt");
 			BufferedWriter buffer = new BufferedWriter(filewriter);
-			buffer.write("Hola Diego " + "\n");
+		//	buffer.write("Hola Diego " + "\n");
 			buffer.write(empleado.toString() + "\n");
 			buffer.close();
 		}
@@ -36,6 +36,12 @@ public class ArchivocDAO implements EmployeeDAO{
 	public List<String> recuperarString() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void guardar2(Employee empleado) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

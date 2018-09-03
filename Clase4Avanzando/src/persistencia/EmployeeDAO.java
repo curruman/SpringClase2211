@@ -11,5 +11,7 @@ public interface EmployeeDAO {
 	public List<Employee> recuperar();
 	
 	public List<String> recuperarString();
+	
+	public void guardar2(Employee empleado);
 
 }

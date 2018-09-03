@@ -4,7 +4,7 @@ import modelo.Employee;
 import modelo.EmployeeDTO;
 
 public class Conversor {
-	public EmployeeDTO convert(Employee emp) {
+	public static EmployeeDTO convert(Employee emp) {
 		EmployeeDTO dto = new EmployeeDTO();
 		dto.setLegajo(emp.getLegajo());
 		dto.setName(emp.getName());

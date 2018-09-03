@@ -31,4 +31,10 @@ public class InMemoryDAO implements EmployeeDAO {
 			return empleadoString;
 	}
 
+	@Override
+	public void guardar2(Employee empleado) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
