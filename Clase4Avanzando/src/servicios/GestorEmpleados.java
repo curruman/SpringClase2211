@@ -7,14 +7,17 @@ import modelo.Employee;
 import persistencia.ArchivoDAO;
 import persistencia.ArchivocDAO;
 import persistencia.EmployeeDAO;
+import persistencia.EmployeeDAOFactory;
 import persistencia.InMemoryDAO;
 
 
 public class GestorEmpleados {
 
 	private static EmployeeDAO dao = new InMemoryDAO();
-	//private static EmployeeDAO daoArchivo = new ArchivoDAO();
-	private static EmployeeDAO daoArchivo = new ArchivoDAO();
+	
+//	private static EmployeeDAO daoArchivo = new ArchivoDAO();
+	
+	private static EmployeeDAO daoFact = EmployeeDAOFactory.createEmployee();
 	
 	public static List<Employee> generateRandomEmployees(int cantidad, String nombreBase, int legajoBase, Employee report){
 		List<Employee> employees = new ArrayList<Employee>();
@@ -28,7 +31,7 @@ public class GestorEmpleados {
 			employees.add(emp);
 			//dao.guardar(emp);
 			dao.guardar2(emp);
-			daoArchivo.guardar(emp);
+			daoFact.guardar(emp);
 		}
 		
 		return employees;
@@ -45,6 +48,7 @@ public class GestorEmpleados {
 		empl.setName(nombre);
 		empl.setUbicacion(ubicacion);
 		dao.guardar(empl);
+		daoFact.guardar(empl);
 		//daoArchivo.guardar(empl);
 		return empl;
 	}
