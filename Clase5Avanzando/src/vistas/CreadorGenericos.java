@@ -1,5 +1,7 @@
 package vistas;
 
+import colecciones.ArreglosLista;
+import colecciones.Sets;
 import genericos.CacheGenerica;
 import genericos.CachePersona;
 import genericos.CacheString;
@@ -23,6 +25,12 @@ public class CreadorGenericos {
 		
 		cpg.imprimirContenido();
 		csg.imprimirContenido();
+		
+		ArreglosLista arr = new ArreglosLista();
+		arr.listas();
+		
+		Sets coleccionSet = new Sets();
+		coleccionSet.metodoSet();
 
 	}
 
