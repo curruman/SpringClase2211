@@ -1,11 +1,13 @@
 package vistas;
 
 import colecciones.ArreglosLista;
+import colecciones.PilasyColas;
 import colecciones.Sets;
 import genericos.CacheGenerica;
 import genericos.CachePersona;
 import genericos.CacheString;
 import modelo.Persona;
+import ordenamiento.Ordenar;
 
 public class CreadorGenericos {
 
@@ -14,7 +16,7 @@ public class CreadorGenericos {
 		CachePersona cp = new CachePersona();
 		CacheString cs = new CacheString();
 		
-		CacheGenerica<Persona> cpg = new CacheGenerica <>();
+/*		CacheGenerica<Persona> cpg = new CacheGenerica <>();
 		CacheGenerica<String> csg = new CacheGenerica <>();
 		Persona p = new Persona();
 		p.setDni(123);
@@ -31,6 +33,12 @@ public class CreadorGenericos {
 		
 		Sets coleccionSet = new Sets();
 		coleccionSet.metodoSet();
+	*/	
+	//	PilasyColas pyc = new PilasyColas();
+		//pyc.PilasColas();
+		
+		Ordenar o = new Ordenar();
+		o.ordenarmiento();
 
 	}
 
