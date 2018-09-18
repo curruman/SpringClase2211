@@ -1,5 +1,7 @@
 package vistas;
 
+import archivos.ArchivoAvanzado;
+import archivos.ArchivoCaracter;
 import expresiones.regulares.Regulares;
 
 public class ExpRegulares {
@@ -9,6 +11,10 @@ public class ExpRegulares {
 		
 		Regulares r1 = new Regulares();
 		r1.regular();
+		ArchivoAvanzado a = new ArchivoAvanzado();
+		a.io();
+		ArchivoCaracter ar = new ArchivoCaracter();
+		ar.ioChar();
 
 	}
 
