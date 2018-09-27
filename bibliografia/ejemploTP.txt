@@ -1,0 +1,6 @@
+[
+ {
+  "nombre":"Diego", "apellido":"Lopez"},
+ {
+  "nombre":"Alfoso", "apellido":"Oviedo"}
+]
