@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/internal/Observable';
+import { Usuario } from 'src/app/modelo/usuario';
+
 
 
 @Injectable({
@@ -16,16 +19,20 @@ export class DataService {
   nacionalidad = this.nacionalidades.asObservable();
 
   constructor(private http: HttpClient) {
-    this.http.get('http://localhost:8080/nacionalidades').subscribe((informacionServidor: any)=>{
-      console.log(informacionServidor);
-      this.nacionalidades = informacionServidor;
-    });
+  
+    //  this.http.get('http://localhost:8080/nacionalidades').subscribe((informacionServidor: any)=>{
+    //  console.log(informacionServidor);
+      //this.nacionalidades = informacionServidor;
+ //   });
     
-
    }
 
-  agregarNacionalidad(nac) {
-    this.nacionalidades.next(nac);
+ // public agregarNacionalidad(nac) {
+  public getNacionalidades() : Observable<any> {   
+   return this.http.get('http://localhost:8080/nacionalidades');
+  }
+  public login(usuario:Usuario){
+    return this.http.post('http://localhost:8080/login', usuario);
   }
 
 }
