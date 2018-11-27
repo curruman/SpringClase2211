@@ -36,6 +36,6 @@ public class Usuario {
 				+ "]";
 	}
 	
-	
+	// aca para guardar el angular
 
 }
