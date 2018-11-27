@@ -3,6 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import { Usuario } from 'src/app/modelo/usuario';
+import { HttpHeaders } from '@angular/common/http';
 
 
 
@@ -32,7 +33,20 @@ export class DataService {
    return this.http.get('http://localhost:8080/nacionalidades');
   }
   public login(usuario:Usuario){
-    return this.http.post('http://localhost:8080/login', usuario);
+    const httpOptions = {
+      headers : new HttpHeaders({
+        'Context-Type' : 'application/json'
+      })
+    };
+    try{
+      this.http.post('http://localhost:8080/login', usuario, httpOptions).subscribe(
+      res =>{
+        console.log(res);
+    });
+    }catch(err) {
+      console.log(err);
+    }
+     
   }
 
 }
