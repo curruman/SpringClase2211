@@ -18,6 +18,10 @@ export class DataService {
     { id: 3, nacionalidad : 'aleman'  }
   ]);
   nacionalidad = this.nacionalidades.asObservable();
+  private nombreUsuario = new BehaviorSubject('');
+  nombre = this.nombreUsuario.asObservable();
+
+  
 
   constructor(private http: HttpClient) {
   

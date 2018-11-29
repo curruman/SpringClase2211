@@ -1,7 +1,8 @@
 <form>
   <div class="form-group">
     <label for="nombre">Nombre</label>
-    <input type="text" [(ngModel)]="nombre" name="nombre" class="form-control" id="nombre" aria-describedby="nombreHelp" placeholder="Ingrese nombre">
+    <input type="text" [(ngModel)]="nombre" name="nombre" class="form-control" id="nombre" aria-describedby="nombreHelp" placeholder="Ingrese nombre" minlength="3" required>
+    
     <small id="nombreHelp" class="form-text text-muted">No lo vamos a compartir.</small>
   </div>
   <div class="form-group">
@@ -18,8 +19,13 @@
       </option>
     </select>
   </div>
-  
+  <div class="form-group">
+    <label for="id">Documento</label>
+    <input type="text" [(ngModel)]="id" name="id" class="form-control" id="id" placeholder="Ingrese Documento">
+  </div> 
   <button type="submit" (click)="enviar()" class="btn btn-primary">Submit</button>
 </form>
+<div style="visibility: hidden">  {{ id + ' ' + nombre + ' ' + apellido + ' - nacionalidad:' + idNacionalidad }} </div>
+<br>
+{{ variable }}
 
-{{ nombre + ' ' + apellido + ' - nacionalidad:' + idNacionalidad }}
