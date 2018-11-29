@@ -3,6 +3,7 @@ import { DataService } from 'src/app/data.service';
 import {BehaviorSubject } from 'rxjs'
 import { Nacionalidad } from 'src/app/modelo/nacionalidad';
 import { Usuario } from 'src/app/modelo/usuario';
+import { and } from '@angular/router/src/utils/collection';
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
@@ -12,7 +13,9 @@ export class FormularioComponent implements OnInit {
 
   public nombre: string = '';
   public apellido: string = '';
-  public idNacionalidad: number = 1;
+  public idNacionalidad: number = 0;
+  public id = 0;
+  public variable: string = '';
 
 
 
@@ -35,14 +38,22 @@ export class FormularioComponent implements OnInit {
   }
 
   public enviar() :void {
-    console.log("Se recibio nombre: " + this.nombre + " apellido: " + this.apellido + this.idNacionalidad );
-    let user : Usuario = new Usuario();
-    user.apellido = this.apellido;
-    user.nombre = this.nombre;
-    user.nacionalidad = this.idNacionalidad;
-
-    this._data.login(user);
+    console.log("Se recibio nombre: " + this.nombre + " apellido: " + this.apellido + this.idNacionalidad + this.id);
+    if (this.nombre == " " || this.id == null){
+      console.log("Faltan datos del nombre");
+      this.variable = "Faltan datos del nombre";
+    }
+    else{
+      let user : Usuario = { 
+        'apellido' : this.apellido,
+        'nombre' : this.nombre,
+        'nacionalidad' : this.idNacionalidad,
+        'id' : this.id
+      };
+      this._data.login(user);
+    }  
  }
+
 
 
 }

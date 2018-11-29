@@ -6,6 +6,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,8 +29,17 @@ public class GreetingController {
     }
     
     @PostMapping("/login")
-    public void login(Usuario usuario) {
-    	System.out.println(usuario);
+    public void login(@RequestBody Usuario usuario) {
+    	String nombre;
+    	nombre = usuario.getNombre();
+    	Integer docu;
+    	docu = usuario.getId();
+    	if (nombre.isEmpty() || docu == 0) {
+    		System.out.println("Faltan Datos");
+    	}
+    	else{
+    		System.out.println(usuario);
+    	}
     }
     
     private List<Nacionalidades> getListNacionalidades(){
